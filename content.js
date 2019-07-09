@@ -1,13 +1,18 @@
 console.log("Chrome extension go?");
 
-let panel = document.querySelector("ul.action-list");
-let downloadBtn = document.querySelector("a[title='Tải xuống']");
+window.addEventListener("load", function() {
+	let panel = document.querySelector("ul.action-list");
+	let container = document.createElement("li");
 
-let container = document.createElement("li");
-let test = downloadBtn.cloneNode(true);
+	let downloadBtn = document.querySelector("li a[title='Tải xuống']");
+	let vipBtn = downloadBtn.cloneNode(true);
+	vipBtn.setAttribute("title", "Tải");
+	vipBtn.querySelector("span").innerHTML = "VIP (320kbps)";
+	container.appendChild(vipBtn);
 
-test.setAttribute("title", "Tải");
-test.querySelector("span").innerHTML = "Tải (320kbps)";
-console.log(panel);
-console.log(test);
-console.log(downloadBtn);
+	if (panel) {
+		// panel.appendChild(container);
+		panel.insertBefore(container, panel.lastChild);
+		console.log(panel);
+	}
+});

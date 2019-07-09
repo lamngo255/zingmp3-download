@@ -7,7 +7,8 @@
 	"content_scripts": [
 		{
 			"matches": ["https://zingmp3.vn/*"],
-			"js": ["content.js"]
+			"js": ["content.js"],
+			"run_at": "document_end"
 		}
 	],
 	"permissions": ["downloads", "background"],
