@@ -1,0 +1,20 @@
+{
+	"manifest_version": 2,
+	"name": "Zing Mp3 Downloader",
+	"description": "Download any song from Zingmp3.vn at your fingertips!",
+	"author": "Lam Ngo - vdev.lamnn@gmail.com",
+	"version": "0.1",
+	"content_scripts": [
+		{
+			"matches": ["https://zingmp3.vn/*"],
+			"js": ["content.js"]
+		}
+	],
+	"permissions": ["downloads", "background"],
+	"content_security_policy": "script-src 'self'; default-src 'self'",
+	"browser_action": {
+		"default_icon": "ct.png",
+		"default_popup": "sketch/index.html",
+		"default_title": "Download songs from Zingmp3.vn website"
+	}
+}
