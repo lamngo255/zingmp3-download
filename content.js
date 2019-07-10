@@ -20,12 +20,14 @@ const getDownloadLink = songUrl => {
 						filename: songTitle
 					});
 				};
+				downloadBtn.remove();
 				panel.insertBefore(vipBtn, panel.lastChild);
 			}
 		}
 	);
 };
 
+// Get download link when changing song (single page loaded)
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 	if (request.message === "url_changed!") {
 		const songUrl = request.url;
@@ -33,5 +35,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 	}
 });
 
+// get download link when first loads the page
 let url = window.location.href;
 getDownloadLink(url);
