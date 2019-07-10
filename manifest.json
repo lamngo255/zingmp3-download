@@ -11,11 +11,22 @@
 			"run_at": "document_end"
 		}
 	],
-	"permissions": ["downloads", "background"],
+	"permissions": ["downloads", "background", "https://zing-mp3.glitch.me/"],
 	"content_security_policy": "script-src 'self'; default-src 'self'",
+	"icons": {
+		"16": "ct.png",
+		"128": "ct.png"
+	},
 	"browser_action": {
-		"default_icon": "ct.png",
-		"default_popup": "sketch/index.html",
+		"default_icon": {
+			"19": "ct.png",
+			"38": "ct.png"
+		},
+		"default_popup": "popup/index.html",
 		"default_title": "Download songs from Zingmp3.vn website"
+	},
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
 	}
 }
