@@ -8,7 +8,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 			.then(response => response.json())
 			.then(data => {
 				sendResponse(data);
-				console.log(data);
 			});
 
 		return true; // Will respond asynchronously.
@@ -19,6 +18,15 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 		chrome.downloads.download({
 			url,
 			filename
+		});
+	}
+});
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+	if (changeInfo.url && changeInfo.url.startsWith("https://zingmp3.vn")) {
+		chrome.tabs.sendMessage(tabId, {
+			message: "url_changed!",
+			url: changeInfo.url
 		});
 	}
 });
