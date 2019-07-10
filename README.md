@@ -1,1 +1,1 @@
-# zingmp3-download
+# Zing Mp3 Downloader
