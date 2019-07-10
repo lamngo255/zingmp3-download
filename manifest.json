@@ -3,7 +3,7 @@
 	"name": "Zing Mp3 Downloader",
 	"description": "Download any song from Zingmp3.vn at your fingertips!",
 	"author": "Lam Ngo - vdev.lamnn@gmail.com",
-	"version": "0.1",
+	"version": "1.0",
 	"content_scripts": [
 		{
 			"matches": ["https://zingmp3.vn/*"],
