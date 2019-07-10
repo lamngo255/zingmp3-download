@@ -11,8 +11,12 @@
 			"run_at": "document_end"
 		}
 	],
-	"permissions": ["downloads", "background", "https://zing-mp3.glitch.me/"],
-	"content_security_policy": "script-src 'self'; default-src 'self'",
+	"permissions": [
+		"downloads",
+		"background",
+		"tabs",
+		"https://zing-mp3.glitch.me/"
+	],
 	"icons": {
 		"16": "ct.png",
 		"128": "ct.png"
