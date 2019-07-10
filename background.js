@@ -13,4 +13,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 		return true; // Will respond asynchronously.
 	}
+
+	if (request.contentScriptQuery == "downloadMp3") {
+		let { url, filename } = request;
+		chrome.downloads.download({
+			url,
+			filename
+		});
+	}
 });
