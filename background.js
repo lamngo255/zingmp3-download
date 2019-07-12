@@ -23,10 +23,20 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-	if (changeInfo.url && changeInfo.url.startsWith("https://zingmp3.vn")) {
-		chrome.tabs.sendMessage(tabId, {
-			message: "url_changed!",
-			url: changeInfo.url
-		});
+	let newUrl = changeInfo.url;
+	if (newUrl) {
+		if (newUrl.startsWith("https://zingmp3.vn/bai-hat")) {
+			chrome.tabs.sendMessage(tabId, {
+				message: "bai-hat",
+				url: changeInfo.url
+			});
+		}
+
+		if (newUrl.startsWith("https://zingmp3.vn/video-clip")) {
+			chrome.tabs.sendMessage(tabId, {
+				message: "video-clip",
+				url: changeInfo.url
+			});
+		}
 	}
 });
