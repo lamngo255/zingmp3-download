@@ -3,9 +3,9 @@ const getDownloadLink = (songUrl, mediaType) => {
 		{ contentScriptQuery: "queryZingMp3", url: songUrl },
 		songData => {
 			let panel = document.querySelector("ul.action-list");
-			let songTitle = `${songData.title}.mp3`;
 
 			if (mediaType == "bai-hat") {
+				let songTitle = `${songData.title}.mp3`;
 				let linkVip = songData.source.audio[320].download;
 
 				if (panel) {
