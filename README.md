@@ -2,4 +2,4 @@
 
 Download link: https://chrome.google.com/webstore/detail/zing-mp3-downloader/hfnlihmimmlilelpcclhdhchamjlopgl
 
-![demo screenshot](https://i.imgur.com/QmIzy7e.png)
+![demo screenshot](https://i.imgur.com/O4iWB0D.png)
