@@ -24,7 +24,7 @@ const getDownloadLink = (songUrl, mediaType) => {
 					downloadBtn.remove();
 					panel.insertBefore(vipBtn, panel.lastChild);
 				}
-			} else {
+			} else if (mediaType == "video-clip") {
 				// mediaType == video-clip
 				let linkVip = songData.source.video[1080].view;
 
@@ -54,4 +54,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 // get download link when first loads the page
 let url = window.location.href;
-getDownloadLink(url);
+if (url.startsWith("https://zingmp3.vn/bai-hat")) {
+	getDownloadLink(url, "bai-hat");
+} else if (url.startsWith("https://zingmp3.vn/video-clip")) {
+	getDownloadLink(url, "video-clip");
+}
