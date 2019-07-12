@@ -29,8 +29,8 @@ const getDownloadLink = (songUrl, mediaType) => {
 				let linkVip = songData.source.video[1080].view;
 
 				if (panel) {
-					let ngheAudio = document.querySelector("ul.action-list").children[2];
-					let vipBtn = ngheAudio.cloneNode(true);
+					let firstChild = document.querySelector("ul.action-list").children[1];
+					let vipBtn = firstChild.cloneNode(true);
 					vipBtn.setAttribute("title", "Tải");
 					vipBtn.querySelector("span").innerHTML = "Tải VIP (1080p)";
 					vipBtn.querySelector("a").setAttribute("href", linkVip);
