@@ -25,18 +25,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 	let newUrl = changeInfo.url;
 	if (newUrl) {
-		if (newUrl.startsWith("https://zingmp3.vn/bai-hat")) {
-			chrome.tabs.sendMessage(tabId, {
-				message: "bai-hat",
-				url: changeInfo.url
-			});
+		let msg = "bai-hat";
+		if (newUrl.startsWith("https://zingmp3.vn/video-clip")) {
+			msg = "video-clip";
 		}
 
-		if (newUrl.startsWith("https://zingmp3.vn/video-clip")) {
-			chrome.tabs.sendMessage(tabId, {
-				message: "video-clip",
-				url: changeInfo.url
-			});
-		}
+		chrome.tabs.sendMessage(tabId, {
+			message: msg,
+			url: changeInfo.url
+		});
 	}
 });
