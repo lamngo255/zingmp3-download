@@ -18,11 +18,11 @@
 		"https://zing-mp3.glitch.me/"
 	],
 	"icons": {
-		"16": "zing-logo.png",
-		"128": "zing-logo.png"
+		"16": "images/zing-logo.png",
+		"128": "images/zing-logo.png"
 	},
 	"browser_action": {
-		"default_icon": "zing-logo.png",
+		"default_icon": "images/zing-logo.png",
 		"default_popup": "popup/index.html",
 		"default_title": "Download songs from Zingmp3.vn website"
 	},
